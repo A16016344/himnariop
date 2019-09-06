@@ -139,15 +139,15 @@ body {
     outline: none;
     cursor: pointer; }
   .header #butBack {
-    background: url(/images/back_12.svg) center center no-repeat; }
+    background: url(../images/back_12.svg) center center no-repeat; }
 	.header #butNext {
-		background: url(/images/next_12.svg) center center no-repeat; }
+		background: url(../images/next_12.svg) center center no-repeat; }
 	.header #butPrev {
-		background: url(/images/prev_12.svg) center center no-repeat; }
+		background: url(../images/prev_12.svg) center center no-repeat; }
 	.header #butSearch {
-		background: url(/images/search_12.svg) center center no-repeat; }
+		background: url(../images/search_12.svg) center center no-repeat; }
 	.header #butFav {
-		background: url(/images/fav_12.svg) center center no-repeat; }
+		background: url(../images/fav_12.svg) center center no-repeat; }
 .header__title {
 	display:inline-block;
 	max-height:24px;
