@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<HTML>
+<Head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajustes | Sólo a Dios la Gloria</title>
+  <link rel="stylesheet" type="text/css" href="../styles/inline.css">
+  <link rel="stylesheet" href="../font/flaticon.css">
+  	<script src="scripts/framework.js"></script>
+  
+    <!-- TODO add manifest here -->
+  <link rel="manifest" href="/manifest.json">
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Himnario Presbiteriano">
+  <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+  <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#2F3BA2">
+  <style>
+  .input{padding:8px;display:block;border:none;border-bottom:1px solid #ccc;width:100%}
+  </style>
+</head>
+<body>
+  <header class="header">
+   <a href="index.html"><button id="butBack" class="headerButton " aria-label="Back"></button></a> <h1 class="header__title">Ajustes</h1>
+
+  </header>
+  <button id="boton" class="ocultar"></button>
+<section>
+	<h3><button class="botonF2" id="modoNocheButton"><span class="flaticon-power"></span></button> Modo Noche</h3>
+	<h3><button class="botonF2" id="startGrillButton"><span class="flaticon-power"></span></button> Iniciar en cuadricula</h3>
+</section>
+	<script async src = "https://static.addtoany.com/menu/page.js" > </script>  
+		  <script src="scripts/app.js" async></script>
+	<script>
+	modoNoche = localStorage.getItem("modoNoche");
+	startGrill = localStorage.getItem("TipoIndice");
+	var modoNocheButton = document.getElementById("modoNocheButton");
+	var startGrillButton = document.getElementById("startGrillButton");
+
+	if (modoNoche == "true"){
+		document.querySelector("#modoNocheButton").style = "Background:#4CAF50;";
+	}
+	
+	if (startGrill == "true"){
+		document.querySelector("#startGrillButton").style = "Background:#4CAF50;";
+	}
+	
+	modoNocheButton.addEventListener("click", function(){
+		if (modoNoche == "true"){
+			document.querySelector("#modoNocheButton").style = "Bacground:#607D8B;";
+			location.reload();
+			localStorage.setItem("modoNoche","false");
+			modoNoche = "false"	;
+		} else {
+			document.querySelector("#modoNocheButton").style = "Background:#4CAF50;";
+			location.reload();
+			localStorage.setItem("modoNoche","true");
+			modoNoche = "true";
+		}
+	});
+	
+	startGrillButton.addEventListener("click", function(){
+		if (startGrill == "true"){
+			document.querySelector("#startGrillButton").style = "Bacground:#607D8B;";
+			localStorage.setItem("TipoIndice","false");
+						location.reload();
+		} else {
+			document.querySelector("#startGrillButton").style = "Background:#4CAF50;";
+			localStorage.setItem("TipoIndice","true");
+						location.reload();
+		}
+	});
+	
+	</script>
+  <!-- Uncomment the line below when ready to test with fake data -->
+</body>
+</html>

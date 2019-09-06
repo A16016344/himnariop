@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<HTML>
+<Head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favoritos | Sólo a Dios la Gloria</title>
+  <link rel="stylesheet" type="text/css" href="../styles/inline.css">
+  <link rel="stylesheet" href="../font/flaticon.css">
+  	<script src="scripts/framework.js"></script>
+  
+    <!-- TODO add manifest here -->
+  <link rel="manifest" href="/manifest.json">
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Himnario Presbiteriano">
+  <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+  <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#2F3BA2">
+  
+</head>
+<body>
+	<header class="header">
+		<h1 class="header__title">Favoritos</h1>
+	</header>
+	<nav class="nav">
+		<div class="nav__elements">
+			<a href="index.html" class="nav__link"><span class="nav__icon flaticon-home-1"></span></a><a href="cuadricula.html" class="nav__link"><span class="nav__icon flaticon-menu-4"></span></a><a href="buscar.html" class="nav__link"><span class="nav__icon flaticon-search"></span></a><a href="favoritos.html" class="nav__link nav__focus"><span class="nav__icon flaticon-star"></span></a><a href="info.html" class="nav__link"><span class="nav__icon flaticon-info"></span></a>
+		</div>
+	</nav>
+	
+<section>
+ <ul id="lista">
+<script>
+
+for (var i = 0; i < 707; i++) {
+	favorito = localStorage.getItem('fav'+i);
+	nombre_himnofav = localStorage.getItem('nombre_himno'+i)
+	
+	var num_000 = 0;
+	if (i >= 100) {
+	num_000 = i;
+} else if (i >= 10) {
+	num_000 = "0"+i;
+} else {
+	num_000 = "00"+i;
+}
+
+   if (favorito == "true"){
+document.write("<li><a class='link' href='himno/"+num_000+".html'>Himno "+i+". "+nombre_himnofav+"</a></li>");
+   }
+}
+</script>
+</ul>
+<center>
+<button class="button" onclick="for (var i = 0; i < 707; i++) {document.querySelector('.button').textContent='Limpiando...';localStorage.setItem('fav'+i,false);location.reload();}">Limpiar favoritos</button>
+</center>
+</section>
+	<script async src = "https://static.addtoany.com/menu/page.js" > </script>  
+  <!-- Uncomment the line below when ready to test with fake data -->
+  <script src="scripts/app.js" async></script>
+</body>
+</html>
