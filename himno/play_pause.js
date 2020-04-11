@@ -122,7 +122,7 @@ function show_partiture(){
 	partiture.id = ("partiture");
 	partiture.style = ("margin-top: 56px; height: 100%;");
 	document.querySelector("body").appendChild(partiture);
-	document.getElementById("partiture").innerHTML = '<button class="partiture_close" onclick="location.reload()"><span class="flaticon-error"></span></button><iframe src="https://ipuertadesalvacion.com/HimnarioNotasPDF/'+num_himno+'.pdf" width="100%" height="100%"></iframe>';
+	document.getElementById("partiture").innerHTML = '<button class="partiture_close" onclick="location.reload()"><span class="flaticon-error"></span></button><iframe src="http://docs.google.com/gview?url=https://ipuertadesalvacion.com/HimnarioNotasPDF/'+num_himno+'.pdf&embedded=true" width="100%" height="100%"></iframe>';
 
 }
 
