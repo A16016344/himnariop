@@ -18,7 +18,7 @@ if (back_to != null){
 
 document.querySelector('.header__title').textContent = titulo;
 document.querySelector('title').textContent = num_himno+". "+titulo+" | Sólo a Dios la Gloria";
-document.querySelector('.titulo').innerHTML = "<button id='addFav' class='botonF2'><span  class='flaticon-star'></span></button> Himno "+num_himno+". "+titulo+"<br><center> <button class='proyectar' onclick='convert_to_slides();launchFullScreen(document.documentElement);'><span class='flaticon-television'></span> Modo Proyector</button> <button class='proyectar' style='background-color: green;' onclick='launchFullScreen(document.documentElement);show_partiture();'><span class='flaticon-music-player-1'></span> Ver partitura</button></center>";
+document.querySelector('.titulo').innerHTML = `<button id='addFav' class='botonF2'><span  class='flaticon-star'></span></button> Himno ${num_himno}. ${titulo}<br><center> <button class='proyectar' onclick='convert_to_slides();launchFullScreen(document.documentElement);'><span class='flaticon-television'></span></button> <button class='proyectar' style='background-color: green;' onclick='launchFullScreen(document.documentElement);show_partiture();'><span class='flaticon-music-player-1'></span></button> <button class="proyectar" style="background-color: darkblue;" onclick="javascript:window.print();"><span class='flaticon-print'></span></button></center>`;
 document.querySelector('.header__num').textContent = num_himno;
 
 var addFav = document.getElementById("addFav");

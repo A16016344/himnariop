@@ -370,12 +370,13 @@ body {
 
 .proyectar {
   margin-top: 1em;
-border-radius: 1rem;
+border-radius: 2rem;
 color:#FFF;
 display: inline-block;
 background-color: #D32F2F;
-padding-left:1em;
-padding-right:1em;
+padding-left:0.5em;
+padding-right:0.5em;
+font-size: x-large;
 line-height: 2em;
 overflow:hidden;
 }
@@ -542,3 +543,38 @@ img {
 	background-color:#000;
 }
 
+@media print {
+  section {
+    width:100%;
+   -webkit-box-flex: 1;
+   -webkit-flex: 1;
+       -ms-flex: 1;
+           flex: 1;
+   overflow-x: auto;
+   overflow-y: auto;
+   -webkit-overflow-scrolling: touch;
+   padding: 16px;
+   position: absolute;
+   box-sizing: border-box;
+   background: #fff;
+   border-radius: 2px;
+   margin: 0px;
+  }
+
+  .header {
+    display: none;
+  }
+
+  h1 center {
+    display: none;
+  }
+
+  .contenedor {
+    display: none;
+  }
+
+  body, h1, h2, p {
+    color: black;
+  }
+
+}
