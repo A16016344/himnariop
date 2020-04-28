@@ -15,7 +15,6 @@ if (back_to != null){
 	back_button.href = back_to;
 }
 
-
 document.querySelector('.header__title').textContent = titulo;
 document.querySelector('title').textContent = num_himno+". "+titulo+" | Sólo a Dios la Gloria";
 document.querySelector('.titulo').innerHTML = `<button id='addFav' class='botonF2'><span  class='flaticon-star'></span></button> Himno ${num_himno}. ${titulo}<br><center> <button class='proyectar' onclick='convert_to_slides();launchFullScreen(document.documentElement);'><span class='flaticon-television'></span></button> <button class='proyectar' style='background-color: green;' onclick='launchFullScreen(document.documentElement);show_partiture();'><span class='flaticon-music-player-1'></span></button> <button class="proyectar" style="background-color: darkblue;" onclick="javascript:window.print();"><span class='flaticon-print'></span></button></center>`;
@@ -33,31 +32,23 @@ function launchFullScreen(element) {
 	}
   }
 
-if (num_himno >= 100) {
-	num_000 = num_himno;
-} else if (num_himno >= 10) {
-	num_000 = "0"+num_himno;
-} else {
-	num_000 = "00"+num_himno;
+function aniadirCeros(numeroSinCeros){
+	var numConCeros
+	if (numeroSinCeros >= 100) {
+		numConCeros = numeroSinCeros;
+	} else if (numeroSinCeros >= 10) {
+		numConCeros = "0"+numeroSinCeros;
+	} else {
+		numConCeros = "00"+numeroSinCeros;
+	}
+	return numConCeros
 }
 
-if (num_prev >= 100) {
-	num_prev = num_prev;
-} else if (num_prev >= 10) {
-	num_prev = "0"+num_prev;
-} else {
-	num_prev = "00"+num_prev;
-}
+num_000 = aniadirCeros(num_himno);
+num_prev = aniadirCeros(num_prev);
+num_next = aniadirCeros(num_next);
 
-if (num_next >= 100) {
-	num_prev = num_prev;
-} else if (num_next >= 10) {
-	num_next = "0"+num_next;
-} else {
-	num_next = "00"+num_next;
-}
-
-document.querySelector('audio').src = "https://ipuertadesalvacion.com/Himnos/"+num_000+".mp3";
+document.querySelector('audio').src = "http://www.himnariop.com/mp3/"+num_000+".mp3";
 document.querySelector('audio').setAttribute('preload','auto');
 document.querySelector('.next_himno').href = num_next+".html"
 document.querySelector('.prev_himno').href = num_prev+".html"
@@ -122,7 +113,7 @@ function show_partiture(){
 	partiture.id = ("partiture");
 	partiture.style = ("margin-top: 56px; height: 100%;");
 	document.querySelector("body").appendChild(partiture);
-	document.getElementById("partiture").innerHTML = '<button class="partiture_close" onclick="location.reload()"><span class="flaticon-error"></span></button><iframe src="https://docs.google.com/viewer?url=https://ipuertadesalvacion.com/HimnarioNotasPDF/'+num_himno+'.pdf&embedded=true" width="100%" height="100%"></iframe>';
+	document.getElementById("partiture").innerHTML = '<button class="partiture_close" onclick="location.reload()"><span class="flaticon-error"></span></button><iframe src="https://docs.google.com/viewer?url=http://www.himnariop.com/pdf/'+num_himno+'.pdf&embedded=true" width="100%" height="100%"></iframe>';
 
 }
 
