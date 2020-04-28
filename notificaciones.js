@@ -13,7 +13,12 @@ if (version == actualizacion){
 }
 
 function actualizarApp(){
+    console.log('[ServiceWorker] Removing old cache');
     caches.delete("HimnarioOffline");
+    caches.open("HimnarioOffline").then(function(cache) {
+        console.log('[ServiceWorker] Caching app shell');
+        return cache.addAll(filesToCache);
+      })
     location.reload();
 }
 
