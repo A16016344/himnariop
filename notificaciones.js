@@ -19,8 +19,7 @@ function actualizarApp(){
         console.log('[ServiceWorker] Caching app shell');
         return cache.addAll(filesToCache);
       })
-      alert("La aplicación se ha actualizado");
-        location.reload();
+      alert("La aplicación se esta actualizando.");
 }
 
 function okUpdate(){
