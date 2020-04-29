@@ -48,7 +48,7 @@ num_000 = aniadirCeros(num_himno);
 num_prev = aniadirCeros(num_prev);
 num_next = aniadirCeros(num_next);
 
-document.querySelector('audio').src = "https://himnariop.000webhostapp.com/mp3/"+num_000+".mp3";
+document.querySelector('audio').src = "mp3/"+num_000+".mp3";
 document.querySelector('audio').setAttribute('preload','auto');
 document.querySelector('.next_himno').href = num_next+".html"
 document.querySelector('.prev_himno').href = num_prev+".html"
