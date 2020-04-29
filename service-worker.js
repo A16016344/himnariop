@@ -41,7 +41,9 @@ var filesToCache = [
   'himno/js/reveal.js',
   'himno/lib/js/classList.js',
   'himno/lib/js/head.min.js',
-  'himno/lib/js/html5shiv.js',
+  'himno/lib/js/html5shiv.js'
+]
+var files_Himnos = [
   //Himnos
   'himno/001.html',
   'himno/002.html',
@@ -757,6 +759,12 @@ self.addEventListener('install', function(e) {
     caches.open(cacheName).then(function(cache) {
       console.log('[ServiceWorker] Caching app shell');
       return cache.addAll(filesToCache);
+    })
+  );
+  e.waitUntil(
+    caches.open("HimnosOffline").then(function(cache) {
+      console.log('[ServiceWorker] Caching HimnosOffline');
+      return cache.addAll(files_Himnos);
     })
   );
 });
