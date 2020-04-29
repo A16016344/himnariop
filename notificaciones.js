@@ -39,7 +39,7 @@ if (version == actualizacion){
 } else {
     document.write(`<div style="border-style:dotted;display:block;"><p>Versión actual: ${version}</p>`); 
     document.write(`<p>Última versión: ${actualizacion}</p>`);
-    document.write(`<p><button onclick="actualizarApp();">Actualizar ahora</button></p></div>`);  
+    document.write(`<p><button id="boton_actualizar" onclick="actualizarApp();">Actualizar ahora</button></p></div>`);  
 }
 
 function actualizarApp(){
@@ -50,7 +50,8 @@ function actualizarApp(){
         return cache.addAll(filesToCache);
       })
       alert("La aplicación se esta actualizando.");
-}
+      document.querySelector("#boton_actualizar").classList.add("ocultar");
+    }
 
 function okUpdate(){
     localStorage.setItem("okUpdate",actualizacion);

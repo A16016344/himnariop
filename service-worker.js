@@ -774,7 +774,8 @@ self.addEventListener('activate', function(e) {
   e.waitUntil(
     caches.keys().then(function(keyList) {
       return Promise.all(keyList.map(function(key) {
-        if (key !== cacheName || "HimnosOffline" ) {
+        const newLocal = "HimnosOffline";
+        if (key !== cacheName && newLocal ) {
           console.log('[ServiceWorker] Removing old cache', key);
           return caches.delete(key);
         }
