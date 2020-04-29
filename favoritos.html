@@ -54,7 +54,7 @@ document.write("<li><a class='link' href='himno/"+num_000+".html'>Himno "+i+". "
 </script>
 </ul>
 <center>
-<button class="button" onclick="for (var i = 0; i < 707; i++) {document.querySelector('.button').textContent='Limpiando...';localStorage.setItem('fav'+i,false);location.reload();}">Limpiar favoritos</button>
+<button class="button" onclick="for (var i = 0; i < 707; i++) {document.querySelector('.button').textContent='Limpiando...';localStorage.removeItem('fav'+i);}location.reload();">Limpiar favoritos</button>
 </center>
 </section>
 	<script async src = "https://static.addtoany.com/menu/page.js" > </script>  
