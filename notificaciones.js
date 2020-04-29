@@ -1,4 +1,4 @@
-var actualizacion = "Abril 2020"
+var actualizacion = "Mayo 2020"
 var Update = localStorage.getItem("okUpdate");
 var filesToCache = [
 	//UI
