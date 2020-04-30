@@ -13,6 +13,7 @@
 // limitations under the License.
 
 var cacheName = 'HimnarioOffline';
+var himnosCache = 'HimnosOffline'
 var filesToCache = [
 	//UI
   '.',
@@ -762,7 +763,7 @@ self.addEventListener('install', function(e) {
     })
   );
   e.waitUntil(
-    caches.open("HimnosOffline").then(function(cache) {
+    caches.open(himnosCache).then(function(cache) {
       console.log('[ServiceWorker] Caching HimnosOffline');
       return cache.addAll(files_Himnos);
     })
@@ -774,8 +775,7 @@ self.addEventListener('activate', function(e) {
   e.waitUntil(
     caches.keys().then(function(keyList) {
       return Promise.all(keyList.map(function(key) {
-        const newLocal = "HimnosOffline";
-        if (key !== cacheName && newLocal ) {
+        if (key !== cacheName && himnosCache ) {
           console.log('[ServiceWorker] Removing old cache', key);
           return caches.delete(key);
         }
