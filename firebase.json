@@ -5,7 +5,8 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**",
-      "**/himno/mp3/**"
+      "**/himno/mp3/**",
+      "**/.git/**"
     ]
   }
 }
