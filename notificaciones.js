@@ -43,7 +43,7 @@ if (version == actualizacion){
     document.write(`<p><button id="boton_actualizar" onclick="actualizarApp();">Actualizar ahora</button> <button onclick="href(blogUrl);">Más información</button></p></div>`);  
 }
 
-if (!localStorage.getItem("colorEnfasis") && !localStorage.getItem("temaPagina")){
+if (!localStorage.getItem("colorEnfasis") && !localStorage.getItem("temaPagina" && version == actualizacion)){
     document.write(`<br><div style="border-style:dotted;display:block;"><p>Ahora puedes escoger el color y el tema de tu aplicación.</p>`); 
     document.write(`<p><a class="link" href="info.html">Ir a configuración</a></p></div>`); 
 }

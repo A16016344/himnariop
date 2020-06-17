@@ -23,6 +23,48 @@ switch (colorEnfasis) {
 		colorPrimarioClaro = "#C5CAE9"
 		colorAcento = "#536DFE"
 		break;
+	case "verde":
+		colorPrimario = "#4CAF50"
+		colorPrimarioOscuro = "#388E3C"
+		colorPrimarioClaro = "#C8E6C9"
+		colorAcento = "#8BC34A"
+		break;
+	case "naranja":
+		colorPrimario = "#FF9800"
+		colorPrimarioOscuro = "#F57C00"
+		colorPrimarioClaro = "#FFE0B2"
+		colorAcento = "#FF5722"
+		break;
+	case "rosa":
+		colorPrimario = "#E91E63"
+		colorPrimarioOscuro = "#C2185B"
+		colorPrimarioClaro = "#F8BBD0"
+		colorAcento = "#FF4081"
+		break;
+	case "azul":
+		colorPrimario = "#2196F3"
+		colorPrimarioOscuro = "#1976D2"
+		colorPrimarioClaro = "#BBDEFB"
+		colorAcento = "#03A9F4"
+		break;
+	case "gris":
+		colorPrimario = "#607D8B"
+		colorPrimarioOscuro = "#455A64"
+		colorPrimarioClaro = "#CFD8DC"
+		colorAcento = "#9E9E9E"
+		break;
+	case "amarillo":
+		colorPrimario = "#FFC107"
+		colorPrimarioOscuro = "#FFA000"
+		colorPrimarioClaro = "#FFECB3"
+		colorAcento = "#FFEB3B"
+		break;
+	case "verdeClaro":
+		colorPrimario = "#8BC34A"
+		colorPrimarioOscuro = "#689F38"
+		colorPrimarioClaro = "#DCEDC8"
+		colorAcento = "#CDDC39"
+		break;
 	default:
 		colorPrimario = "#333"
 		colorPrimarioOscuro = "#000"
