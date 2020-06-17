@@ -1,4 +1,4 @@
-var actualizacion = "Mayo 2020"
+var actualizacion = "170620_beta"
 var blogUrl = "http://www.himnariop.com/2020/04/30/actualizacion-mayo-2020/"
 var Update = localStorage.getItem("okUpdate");
 var filesToCache = [
@@ -42,6 +42,12 @@ if (version == actualizacion){
     document.write(`<p>Última versión: ${actualizacion}</p>`);
     document.write(`<p><button id="boton_actualizar" onclick="actualizarApp();">Actualizar ahora</button> <button onclick="href(blogUrl);">Más información</button></p></div>`);  
 }
+
+if (!localStorage.getItem("colorEnfasis") && !localStorage.getItem("temaPagina")){
+    document.write(`<br><div style="border-style:dotted;display:block;"><p>Ahora puedes escoger el color y el tema de tu aplicación.</p>`); 
+    document.write(`<p><a class="link" href="info.html">Ir a configuración</a></p></div>`); 
+}
+
 
 function actualizarApp(){
     console.log('[ServiceWorker] Removing old cache');

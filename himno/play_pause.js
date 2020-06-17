@@ -4,13 +4,66 @@ var sound = false;
 var num_000;
 var num_next = num_himno+1;
 var num_prev = num_himno-1;
-favorito = localStorage.getItem("fav"+num_himno);
-modoNoche = localStorage.getItem("modoNoche");
+var favorito = localStorage.getItem("fav"+num_himno);
+var modoNoche = localStorage.getItem("modoNoche");
+
+//Recolorear la página
+var colorEnfasis = localStorage.getItem("colorEnfasis")
+var temaPagina = localStorage.getItem("temaPagina")
+switch (colorEnfasis) {
+	case "rojo":
+		colorPrimario = "#F44336"
+		colorPrimarioOscuro = "#D32F2F"
+		colorPrimarioClaro = "#FFCDD2"
+		colorAcento = "#FF5252"
+		break;
+	case "indigo":
+		colorPrimario = "#3F51B5"
+		colorPrimarioOscuro = "#303F9F"
+		colorPrimarioClaro = "#C5CAE9"
+		colorAcento = "#536DFE"
+		break;
+	default:
+		colorPrimario = "#333"
+		colorPrimarioOscuro = "#000"
+		colorPrimarioClaro = "#666"
+		colorAcento = "#999"
+		break;
+}
+switch (temaPagina) {
+	case "claro":
+		colorTexto = "#212121"
+		colorFondoBody = "#BDBDBD"
+		colorFondoSection = "#FFFFFF"
+		break;
+	case "oscuro":
+		colorTexto = "#FFFFFF"
+		colorFondoBody = "#757575"
+		colorFondoSection = "#212121"
+		break;
+	default:
+		colorTexto = "#FFFFFF"
+		colorFondoBody = "#757575"
+		colorFondoSection = "#212121"
+		break;	
+}
+var nuevoEstilo = document.createElement('style');
+nuevoEstilo.appendChild(document.createTextNode(`
+	body{color:${colorTexto};background:${colorFondoBody};}
+	section{background:${colorFondoSection}}
+	.header{background:${colorPrimario}}
+	.nav{background:${colorPrimario}}
+	.nav__focus{background:${colorPrimarioOscuro}; border-bottom:5px solid ${colorAcento}}
+	.button{background:${colorPrimario}}
+	h2{color:${colorPrimario}}
+	.link{background:${colorPrimarioClaro}}
+	.link:hover{background:${colorAcento}}
+`));
+document.body.appendChild(nuevoEstilo);
 
 // Modificar Botón Atras para ir a la ultima pagina principal.
 var back_to = localStorage.getItem("back_to");
 var back_button = document.getElementsByTagName("a")[0];
-
 if (back_to != null){
 	back_button.href = back_to;
 }
@@ -52,12 +105,6 @@ document.querySelector('audio').src = "https://a16016344.github.io/himnariop/him
 document.querySelector('audio').setAttribute('preload','auto');
 document.querySelector('.next_himno').href = num_next+".html"
 document.querySelector('.prev_himno').href = num_prev+".html"
-
-if(modoNoche == "true"){
-	document.querySelector("html").classList.add('modoNoche');
-	document.querySelector("body").classList.add('modoNoche');
-	document.querySelector("section").classList.add('modoNoche');
-}
 
 if (favorito == "true"){
 	document.querySelector('.botonF2').classList.add('favorito');
