@@ -1,5 +1,5 @@
-var actualizacion = "170620_beta"
-var blogUrl = "http://www.himnariop.com/2020/04/30/actualizacion-mayo-2020/"
+var actualizacion = "Julio 2020"
+var blogUrl = "http://www.himnariop.com/2020/07/27/actualizacion-julio-2020/"
 var Update = localStorage.getItem("okUpdate");
 var filesToCache = [
 	//UI
@@ -43,11 +43,17 @@ if (version == actualizacion){
     document.write(`<p><button id="boton_actualizar" onclick="actualizarApp();">Actualizar ahora</button> <button onclick="href(blogUrl);">Más información</button></p></div>`);  
 }
 
-if (!localStorage.getItem("colorEnfasis") && !localStorage.getItem("temaPagina" && version == actualizacion)){
-    document.write(`<br><div style="border-style:dotted;display:block;"><p>Ahora puedes escoger el color y el tema de tu aplicación.</p>`); 
-    document.write(`<p><a class="link" href="info.html">Ir a configuración</a></p></div>`); 
+if (!localStorage.getItem("colorEnfasis") && !localStorage.getItem("temaPagina") && version == actualizacion){
+    document.write(`<br><div style="border-style:dotted;display:block;position:fixed;background:black;width:calc(760px);max-width: calc(100% - 30px)"><p>Ahora puedes escoger el color y el tema de tu aplicación.</p>`); 
+    document.write(`<p><a class="link" href="info.html">Ir a configuración</a></p>`); 
+    document.write(`<p><a class="link" href="#" onclick="temaDefault();">Tema Oscuro + Color Índigo</a></div>`);
 }
 
+function temaDefault() {
+    localStorage.setItem("colorEnfasis", "indigo");
+    localStorage.setItem("temaPagina", "oscuro");
+    location.reload();
+}
 
 function actualizarApp(){
     console.log('[ServiceWorker] Removing old cache');
