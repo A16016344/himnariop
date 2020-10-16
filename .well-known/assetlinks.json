@@ -1,0 +1,5 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target" : { "namespace": "android_app", "package_name": "app.web.himnariop.twa",
+                 "sha256_cert_fingerprints": ["A0:51:32:9F:D6:2A:6C:2A:AF:B5:38:87:D5:64:F7:E1:45:9B:A2:EB:AF:32:8B:7D:8A:9D:6F:C3:5E:1C:8B:FA"] }
+  }]
