@@ -42,7 +42,15 @@ var filesToCache = [
   'himno/js/reveal.js',
   'himno/lib/js/classList.js',
   'himno/lib/js/head.min.js',
-  'himno/lib/js/html5shiv.js'
+  'himno/lib/js/html5shiv.js',
+  //Ayudas liturgicas
+  'ayudas_liturgicas/apostoles.html',
+  'ayudas_liturgicas/bienaventuranzas.html',
+  'ayudas_liturgicas/mandamiento.html',
+  'ayudas_liturgicas/mandamientos.html',
+  'ayudas_liturgicas/niceno.html',
+  'ayudas_liturgicas/padrenuestro.html',
+  'ayudas_liturgicas/toSlides.js'
 ]
 var files_Himnos = [
   //Himnos

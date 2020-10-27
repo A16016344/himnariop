@@ -217,13 +217,19 @@ function convert_to_slides(){
 		num_ver[i] = h2[i].innerHTML;
 	}
 
+    if (temaPagina == "claro"){
+        temaSlides = "white"
+    } else {
+        temaSlides = "black"
+    }
+
 	var enlaces = '';
 
 	for(var i = 0; i < ver.length; i++){
 		enlaces += "<a class='enlace' href='#/"+(i+1)+"'>"+num_ver[i]+"</a>";
 	}
 
-	document.write('<!doctype html>	<html lang="en">	<head>		<meta charset="utf-8">		<title>'+titulo+'</title><meta name="description" content="A framework for easily creating beautiful presentations using HTML"><meta name="author" content="Hakim El Hattab"><meta name="apple-mobile-web-app-capable" content="yes" /><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"><link rel="stylesheet" href="css/reveal.css"><link rel="stylesheet" href="css/theme/black.css" id="theme"></head><body><div class="reveal"><div class="enlaces">'+enlaces+'</div><div class="play_pause"><a id="play_pause" class="enlace" href="javascript:;" style="font-family: monospace;" >▶/❚❚</a></div><div class="cerrar"><a id="play_pause" class="enlace" href="">✖</a></div>	<!-- Any section element inside of this container is displayed as a slide -->	<div class="slides">		'
+	document.write('<!doctype html>	<html lang="en">	<head>		<meta charset="utf-8">		<title>'+titulo+'</title><meta name="description" content="A framework for easily creating beautiful presentations using HTML"><meta name="author" content="Hakim El Hattab"><meta name="apple-mobile-web-app-capable" content="yes" /><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"><link rel="stylesheet" href="css/reveal.css"><link rel="stylesheet" href="css/theme/'+temaSlides+'.css" id="theme"></head><body><div class="reveal"><div class="enlaces" style="max-width:calc(100% - 120px); overflow:auto;">'+enlaces+'</div><div class="play_pause"><a id="play_pause" class="enlace" href="javascript:;" style="font-family: monospace;" >▶/❚❚</a></div><div class="cerrar"><a id="play_pause" class="enlace" href="">✖</a></div>	<!-- Any section element inside of this container is displayed as a slide -->	<div class="slides">		'
 	);
 document.write('<section style="text-align: left;"><h1>Himno '+num_himno+". "+titulo+'</h1><p>'+intro+'<div style="text-align: right;">'+ref+'</div></p></section>');
 

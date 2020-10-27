@@ -60,10 +60,10 @@ switch (colorEnfasis) {
 		colorAcento = "#CDDC39"
 		break;
 	default:
-		colorPrimario = "#333"
-		colorPrimarioOscuro = "#000"
-		colorPrimarioClaro = "#666"
-		colorAcento = "#999"
+		colorPrimario = "#3F51B5"
+		colorPrimarioOscuro = "#303F9F"
+		colorPrimarioClaro = "#C5CAE9"
+		colorAcento = "#536DFE"
 		break;
 }
 switch (temaPagina) {

@@ -1,5 +1,5 @@
-var actualizacion = "Julio 2020"
-var blogUrl = "http://www.himnariop.com/2020/07/27/actualizacion-julio-2020/"
+var actualizacion = "Noviembre 2020"
+var blogUrl = "https://www.himnariop.com/2020/10/27/actualizacion-noviembre-2020/"
 var Update = localStorage.getItem("okUpdate");
 var filesToCache = [
 	//UI
@@ -29,7 +29,15 @@ var filesToCache = [
   'himno/js/reveal.js',
   'himno/lib/js/classList.js',
   'himno/lib/js/head.min.js',
-  'himno/lib/js/html5shiv.js'
+  'himno/lib/js/html5shiv.js',
+  //Ayudas liturgicas
+  'ayudas_liturgicas/apostoles.html',
+  'ayudas_liturgicas/bienaventuranzas.html',
+  'ayudas_liturgicas/mandamiento.html',
+  'ayudas_liturgicas/mandamientos.html',
+  'ayudas_liturgicas/niceno.html',
+  'ayudas_liturgicas/padrenuestro.html',
+  'ayudas_liturgicas/toSlides.js'
 ]
 
 if (version == actualizacion){
@@ -46,7 +54,7 @@ if (version == actualizacion){
 if (!localStorage.getItem("colorEnfasis") && !localStorage.getItem("temaPagina") && version == actualizacion){
     document.write(`<br><div style="border-style:dotted;display:block;position:fixed;background:black;width:calc(760px);max-width: calc(100% - 30px)"><p>Ahora puedes escoger el color y el tema de tu aplicación.</p>`); 
     document.write(`<p><a class="link" href="info.html">Ir a configuración</a></p>`); 
-    document.write(`<p><a class="link" href="#" onclick="temaDefault();">Tema Oscuro + Color Índigo</a></div>`);
+    document.write(`<p><a class="link" href="#" onclick="temaDefault();">Tema por defecto</a></div>`);
 }
 
 function temaDefault() {
