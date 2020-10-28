@@ -242,3 +242,54 @@ for (i=0;i < ver.length; i++){
 	document.write('</div>	</div><script src="lib/js/head.min.js"></script>	<script src="js/reveal.js"></script><script>document.getElementById("play_pause").addEventListener("click", function(){		if (!sound) {		  v.play();		  sound = true;		} else {		  v.pause();		  sound = false;		}	  });			Reveal.initialize({		controls: true,		progress: true,		history: true,		center: true,		transition: "slide"	});</script></body></html>');
 
 }
+
+// Este codigo es para convertir el HTML a una estructura JSON para el nuevo enfoque de la app
+const toJSON = () => {
+	var ver = new Array;
+	var num_ver = new Array;
+	intro = document.getElementsByClassName("intro")[0].innerHTML;
+	ref = document.getElementsByClassName("ref")[0].innerHTML;
+	autor = document.getElementsByTagName("p")[verso.length+2].innerHTML;
+	for (i=0;i < verso.length; i++){
+		ver[i] = verso[i].innerHTML;
+		num_ver[i] = h2[i].innerHTML;
+	}
+
+	document.write(
+		`<head>`,
+		`<link rel="stylesheet" href="css/codecolor.css">`,
+		`</head>`
+	)
+
+	document.write(
+		`<pre><code data-language="json">${num_himno}: {\n`,
+		`	number: ${num_himno},\n`,
+		`	name: '${titulo}',\n`,
+		`	sections: [{\n`
+	)
+
+	for (index_versos=0; index_versos < ver.length; index_versos++){
+		num_ver[index_versos].toLowerCase() === "coro" ? coro = "true" : coro = "false"
+		linea = ver[index_versos].split("<br>")
+		document.write(
+			`\t\tcoro: ${coro},\n`,
+			`\t\tcontent: [\n`
+		)
+		
+		for (index_lineas=0; index_lineas < linea.length-1; index_lineas++){
+			if (index_lineas == linea.length-2){
+				if (index_versos == ver.length-1){
+					document.write(`\t\t\t'${linea[index_lineas].replace('\n', '')}']\n\t}]\n`)
+				} else {
+					document.write(`\t\t\t'${linea[index_lineas].replace('\n', '')}']\n\t},{\n`)
+				}
+			} else {
+				document.write(`\t\t\t'${linea[index_lineas].replace('\n', '')}',\n`)
+			}
+		}
+	}
+	document.write(`},</code></pre>`)
+
+	document.write(`<script src="js/rainbow-custom.min.js"></script>`)
+
+}
