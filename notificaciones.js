@@ -40,6 +40,9 @@ var filesToCache = [
   'ayudas_liturgicas/toSlides.js'
 ]
 
+//Notificacion permanente
+document.write(`Esta aplicación subsiste gracias a las donaciones de los usuarios, las fechas de pago por hosting y los servicios que la mantienen funcionando está cerca. Si deseas apoyar al proyecto y que está app siga disponible puedes donar en el botón a continuación o poniendote en contacto conmigo a travez de la sección de información. <p><a class="link" href="https://www.himnariop.com/donar"><b>Deseo Donar</b></a></p>`)
+
 if (version == actualizacion){
     if (actualizacion != Update){
         document.write(`<div style="border-style:dotted;display:block;"><p>Tu aplicación está actualizada.</p>`); 
