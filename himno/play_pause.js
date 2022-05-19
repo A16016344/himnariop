@@ -7,6 +7,12 @@ var num_prev = num_himno-1;
 var favorito = localStorage.getItem("fav"+num_himno);
 var modoNoche = localStorage.getItem("modoNoche");
 
+console.log(num_himno)
+
+location.href = `../#${num_himno}`
+
+console.log(parseInt(location.pathname.replace('/himno/','').replace('.html', '')))
+
 //Recolorear la página
 var colorEnfasis = localStorage.getItem("colorEnfasis")
 var temaPagina = localStorage.getItem("temaPagina")
@@ -257,39 +263,59 @@ const toJSON = () => {
 
 	document.write(
 		`<head>`,
-		`<link rel="stylesheet" href="css/codecolor.css">`,
 		`</head>`
 	)
 
 	document.write(
-		`<pre><code data-language="json">${num_himno}: {\n`,
-		`	number: ${num_himno},\n`,
-		`	name: '${titulo}',\n`,
-		`	sections: [{\n`
+		`<pre><code>himnos[${num_himno}] = {\n`,
+		`	numero: ${num_himno},\n`,
+		`	titulo: '${titulo}',\n`,
+		`	intro: '${intro.replace(/\n/g, '').replace(/<br>/g, '')}',\n`,
+		`	referencias: [\n`,
 	)
 
+	ref.split('<br>').forEach( e => {
+		if(e != '\n'){
+			document.write(`	'${e.replace(/\n/g, '').replace(/<br>/g, '')}',\n`)
+		}
+	})
+
+	document.write(
+		`	],\n`,
+		`	autores: [\n`,
+
+	)
+
+	autor.split('<br>').forEach( e => {
+		if(e != '\n'){
+			document.write(`	'${e.replace(/\n/g, '').replace(/<br>/g, '')}',\n`)
+		}
+	})
+
+	document.write(	
+		`	],\n`,
+		`	versos: [{\n`
+		)
 	for (index_versos=0; index_versos < ver.length; index_versos++){
 		num_ver[index_versos].toLowerCase() === "coro" ? coro = "true" : coro = "false"
+		console.log(ver[index_versos].split("<br>"))
 		linea = ver[index_versos].split("<br>")
 		document.write(
-			`\t\tcoro: ${coro},\n`,
-			`\t\tcontent: [\n`
+			`\t\tnombre: '${num_ver[index_versos].replace('.', '').trim()}',\n`,
+			`\t\tlineas: [\n`
 		)
 		
-		for (index_lineas=0; index_lineas < linea.length-1; index_lineas++){
-			if (index_lineas == linea.length-2){
+		for (index_lineas=0; index_lineas < linea.length; index_lineas++){
+			if (index_lineas == linea.length-1){
 				if (index_versos == ver.length-1){
-					document.write(`\t\t\t'${linea[index_lineas].replace('\n', '')}']\n\t}]\n`)
+					document.write(`\t\t\t'${linea[index_lineas].replace('\n', '').trim()}']\n\t}]\n`)
 				} else {
-					document.write(`\t\t\t'${linea[index_lineas].replace('\n', '')}']\n\t},{\n`)
+					document.write(`\t\t\t'${linea[index_lineas].replace('\n', '').trim()}']\n\t},{\n`)
 				}
 			} else {
-				document.write(`\t\t\t'${linea[index_lineas].replace('\n', '')}',\n`)
+				document.write(`\t\t\t'${linea[index_lineas].replace('\n', '').trim()}',\n`)
 			}
 		}
 	}
-	document.write(`},</code></pre>`)
-
-	document.write(`<script src="js/rainbow-custom.min.js"></script>`)
-
+	document.write(`}</code></pre>`)
 }

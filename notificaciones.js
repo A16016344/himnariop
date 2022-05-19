@@ -41,6 +41,10 @@ var filesToCache = [
 ]
 
 //Notificacion permanente
+document.write(`HIMNARIOP.COM Y APP.HIMNARIOP.COM YA NO ESTAN DISPONIBLES, Y EL ACCESO A HIMNARIOP.WEB.APP TAMBIEN SERÁ LIMITADO, POR FAVOR, INSTALA LA APP PARA PODER USARLA SIN CONEXIÓN, SI YA LA TIENES INSTALADA ES PROBABLE QUE SIGA FUNCIONANDO, PERO PODRÍA NO FUNCIONAR LOS ARCHIVOS PDF DE LAS PARTITURAS Y LAS PISTAS DE AUDIO, INTENTARÉ PONER EN MARCHA NUEVAMENTE EL PROYECTO, PERO NO TENGO LOS RECURSOS ECONOMICOS PARA HACERLO, SI DESEAS PUEDES APOYAR AL PROYECTO PUEDES PONERTE EN CONTACTO CONMIGO AL <a href="https://wa.me/5219993042573" target="_blank">999 304 2573</a>`)
+document.write(`<br><br>Si deseas donar al proyecto puedes ponerte en contacto conmigo o suscribirte a una donación mensual de lo que quieras aportar en <a href="https://www.mercadopago.com.mx/subscriptions/checkout?preapproval_plan_id=2c93808480710707018077566dd00124" target="_blank">https://www.mercadopago.com.mx/subscriptions/checkout?preapproval_plan_id=2c93808480710707018077566dd00124</a>`)
+document.write(`<br><br>Si deseas donar por solo una ocasión lo puedes hacer desde <a href="https://paypal.me/israeldzib" target="_blank">https://paypal.me/israeldzib</a> dandole click en Enviar`)
+
 if (version == actualizacion){
     if (actualizacion != Update){
         document.write(`<div style="border-style:dotted;display:block;"><p>Tu aplicación está actualizada.</p>`); 
